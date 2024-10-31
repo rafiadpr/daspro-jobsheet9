@@ -12,10 +12,12 @@ public class ArrayNilai23 {
             nilaiAkhir[i] = input.nextInt();
         }
 
-        System.out.println("\nNilai Mahasiswa yang Lulus:");
+        System.out.println("\nStatus Kelulusan Mahasiswa:");
         for (int i = 0; i < nilaiAkhir.length; i++) {
             if (nilaiAkhir[i] > 70) {
-                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i]);
+                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (Lulus)");
+            } else {
+                System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (Tidak Lulus)");
             }
         }
 
