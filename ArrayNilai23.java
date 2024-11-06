@@ -20,7 +20,5 @@ public class ArrayNilai23 {
                 System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (Tidak Lulus)");
             }
         }
-
-        input.close();
     }
 }

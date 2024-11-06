@@ -11,7 +11,7 @@ public class ArrayBilangan23 {
 
         // System.out.println("Isi elemen array bil:");
         int[] bil = {5, 13, -7, 17};
-        for (int i = 0; i < bil.length; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.println("bil[" + i + "] = " + bil[i]);
         }
     }
