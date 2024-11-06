@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class ArrayRataNilai23 {
@@ -6,20 +5,36 @@ public class ArrayRataNilai23 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] nilaiMahasiswa = new int[10];
-        double total = 0;
-        double rataRata;
+        // Meminta input jumlah mahasiswa
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlahMahasiswa = input.nextInt();
 
-        for (int i = 0; i < nilaiMahasiswa.length; i++) {
+        // Deklarasi array dengan ukuran sesuai input pengguna
+        int[] nilaiMahasiswa = new int[jumlahMahasiswa];
+        double totalLulus = 0, totalTidakLulus = 0;
+        int countLulus = 0, countTidakLulus = 0;
+
+        // Meminta input nilai untuk setiap mahasiswa
+        for (int i = 0; i < jumlahMahasiswa; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + " : ");
             nilaiMahasiswa[i] = input.nextInt();
+
+            // Menghitung total dan jumlah mahasiswa lulus atau tidak lulus
+            if (nilaiMahasiswa[i] > 70) {
+                totalLulus += nilaiMahasiswa[i];
+                countLulus++;
+            } else {
+                totalTidakLulus += nilaiMahasiswa[i];
+                countTidakLulus++;
+            }
         }
 
-        for (int i = 0; i < nilaiMahasiswa.length; i++) {
-            total += nilaiMahasiswa[i];
-        }
+        // Menghitung rata-rata lulus dan tidak lulus
+        double rataRataLulus = (countLulus > 0) ? (totalLulus / countLulus) : 0;
+        double rataRataTidakLulus = (countTidakLulus > 0) ? (totalTidakLulus / countTidakLulus) : 0;
 
-        rataRata = total/nilaiMahasiswa.length;
-        System.out.println("Rata - rata nilai = " + rataRata);
+        // Menampilkan rata-rata lulus dan tidak lulus
+        System.out.println("Rata-rata nilai mahasiswa yang lulus = " + rataRataLulus);
+        System.out.println("Rata-rata nilai mahasiswa yang tidak lulus = " + rataRataTidakLulus);
     }
 }
